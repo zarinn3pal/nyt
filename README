@@ -1,1 +1,7 @@
 An angular app using New York times API
+
+Install http-server if not installed using the command 
+npm install http-server -g
+
+Go to the root of the application and start the server using the command below 
+http-server
