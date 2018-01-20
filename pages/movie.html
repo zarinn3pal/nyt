@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-sm-11">
+		<div class="input-group">
+		  <input type="text" class="form-control" placeholder="Search for Movies" ng-model="query" ng-keyup="$event.keyCode == 13 && returnMovieRating()">
+		  <span class="input-group-btn">
+		    <button class="btn btn-primary" type="button" ng-click="returnMovieRating()">Go!</button>
+		  </span>
+		</div>
+	</div>
+
+</div>
+
+
+<table class="table table-hover">
+	<tr ng-repeat = "res in moviesData.results">
+		<td>
+			<h4><b>{{res.display_title}} </b><span class="label label-warning">{{res.mpaa_rating}}</span></h4>
+			<h6><small>"{{res.headline}}"</small></h6>
+			<span class="label label-default">{{res.byline}}</span> |
+			<span><small>{{res.publication_date | date}}</small></span></h4>
+			<h5>{{res.summary_short}}</h5>
+			<span><small><a href="{{res.link.url}}" target="blank">{{res.link.suggested_link_text}}</a></small></span>
+		</td>
+	</tr>
+</table>

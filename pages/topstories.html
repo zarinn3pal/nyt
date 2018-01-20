@@ -1,0 +1,15 @@
+<table class="table table-hover">
+	<tr ng-repeat = "res in results.results">
+		<td>
+			<h4><b>{{res.title}} </b><span><small>{{res.published_date | date}}</small></span></h4>
+			<span class="label label-default">{{res.byline}}</span>
+			<span class="label label-info">{{res.section}}</span>
+			<hr>
+			<h5>{{res.abstract}}</h5>
+			<span><small><a href="{{res.url}}" target="blank">Read more on NYT</a></small></span>
+		</td>
+		<td>
+			<img src="{{res.multimedia[2].url}}" height="200px;" width="200px;" >
+		</td>
+	</tr>
+</table>

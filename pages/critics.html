@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-sm-11">
+		<div class="input-group">
+		  <input type="text" class="form-control" placeholder="Enter Critic's name" ng-model="critic" ng-keyup="$event.keyCode == 13 && returnMovieCritics()">
+		  <span class="input-group-btn">
+		    <button class="btn btn-primary" type="button" ng-click="returnMovieCritics()">Go!</button>
+		  </span>
+		</div>
+		<label class="radio-inline">
+		  <input type="radio" ng-model="critic" value="all"> All Critics
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" ng-model="critic" value="full-time"> Full-time Critics
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" ng-model="critic" value="part-time"> Part-time Critics
+		</label>
+	</div>
+</div>
+
+<table class="table table-hover">
+	<tr ng-repeat = "res in criticsData.results">
+		<td ng-if="res.bio.length != 0 && res.bio != null">
+			<h4><b>{{res.display_name}} </b><span class="label label-warning">{{res.status}}</span></h4><hr>
+			<p ng-bind-html="res.bio"></p>
+		</td>
+		<td ng-if="res.bio.length != 0 && res.bio != null">
+			<img ng-if="res.multimedia != null" src="{{res.multimedia.resource.src}}" height="200px;" width="200px;" >
+		</td>
+	</tr>
+</table>
