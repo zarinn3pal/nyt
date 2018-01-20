@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-hover" ng-if="!badRequest">
 	<tr ng-repeat = "res in results.results">
 		<td>
 			<h4><b>{{res.title}} </b><span><small>{{res.published_date | date}}</small></span></h4>
